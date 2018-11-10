@@ -11,8 +11,8 @@
         </div>
       <% end %>
       <%= f.input :code, placeholder: 'Question', label_html: { class: 'icons pen-icon' }, label: '.' %>
-      <%= f.input :question, placeholder: 'Question', label_html: { class: 'icons pen-icon' }, label: '.' %>
-      <%= f.input :answer, placeholder: 'Answer', label_html: { class: 'icons pen-icon' }, label: '.', :input_html => {:rows => 1}%>
+      <%= f.input :question, as: :text, placeholder: 'Question', label_html: { class: 'icons pen-icon' }, label: '.' %>
+      <%= f.input :answer, as: :text, placeholder: 'Answer', label_html: { class: 'icons pen-icon' }, label: '.', :input_html => {:rows => 1}%>
       <%= f.input :language_id, collection: languages, placeholder: 'Category (ex: dad joke)', label_html: { class: 'icons' }, label: '.' %>
       <%= f.submit 'Add', class: 'form-button' %>
     <% end %>
