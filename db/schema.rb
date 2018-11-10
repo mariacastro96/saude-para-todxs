@@ -10,10 +10,65 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_10_124444) do
+ActiveRecord::Schema.define(version: 2018_11_10_162318) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "contacts", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.string "email"
+    t.string "phone_number"
+    t.string "schedule"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "languages", force: :cascade do |t|
+    t.string "code"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "links", force: :cascade do |t|
+    t.string "name"
+    t.string "link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "code"
+    t.text "question"
+    t.text "answer"
+    t.bigint "language_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["language_id"], name: "index_questions_on_language_id"
+  end
+
+  create_table "statements", force: :cascade do |t|
+    t.string "code"
+    t.string "title"
+    t.text "text"
+    t.bigint "language_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["language_id"], name: "index_statements_on_language_id"
+  end
+
+  create_table "studies", force: :cascade do |t|
+    t.string "code"
+    t.string "title"
+    t.string "subtitle"
+    t.integer "total_value"
+    t.bigint "language_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["language_id"], name: "index_studies_on_language_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -28,4 +83,22 @@ ActiveRecord::Schema.define(version: 2018_11_10_124444) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "variables", force: :cascade do |t|
+    t.string "code"
+    t.string "name"
+    t.integer "value"
+    t.float "percentage"
+    t.bigint "study_id"
+    t.bigint "language_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["language_id"], name: "index_variables_on_language_id"
+    t.index ["study_id"], name: "index_variables_on_study_id"
+  end
+
+  add_foreign_key "questions", "languages"
+  add_foreign_key "statements", "languages"
+  add_foreign_key "studies", "languages"
+  add_foreign_key "variables", "languages"
+  add_foreign_key "variables", "studies"
 end
