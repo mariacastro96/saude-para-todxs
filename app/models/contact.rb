@@ -11,6 +11,7 @@ class Contact < ApplicationRecord
 
   # Validations
   validates :name, :address, :email, :phone_number, :schedule, presence: true
+  
   # Scopes
 
   # Callbacks
