@@ -1,0 +1,15 @@
+<% if f.object.errors.any? %>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="alert alert-danger alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <strong><%= pluralize f.object.errors.count, 'error', 'errors' %> prohibited this <%= f.object.class.name %> from being saved:</strong>
+        <ul class="m-t-5">
+          <% f.object.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+<% end %>
