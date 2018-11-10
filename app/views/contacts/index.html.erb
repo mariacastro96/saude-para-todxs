@@ -1,3 +1,4 @@
+<%= link_to 'new', new_contact_path %><br/>
 <table style="width: 100vw">
   <thead>
     <tr>
@@ -19,7 +20,6 @@
         <td style="border: 1px solid black; padding: 10px 20px;" class="text-center"><%= contact.schedule %></td>
         <td style="border: 1px solid black; padding: 10px 20px;" class="text-center">
           <span style="padding: 0 5px;" class="text-center"><%= link_to 'show', contact_path(contact) %></span>
-          <span style="padding: 0 5px;" class="text-center"><%= link_to 'new', new_contact_path(contact) %></span>
           <span style="padding: 0 5px;" class="text-center"><%= link_to 'edit', edit_contact_path(contact) %></span>
           <span style="padding: 0 5px;" class="text-center"><%= link_to 'delete', contact_path(contact), method: :delete %></span>
         </td>

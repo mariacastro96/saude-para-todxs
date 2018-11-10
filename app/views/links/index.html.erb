@@ -1,3 +1,5 @@
+<%= link_to 'new', new_link_path %><br/>
+
 <table style="width: 100vw">
   <thead>
     <tr>
@@ -13,7 +15,6 @@
         <td style="border: 1px solid black; padding: 10px 20px;" class="text-center"><%= link.link %></td>
         <td style="border: 1px solid black; padding: 10px 20px;" class="text-center">
           <span style="padding: 0 5px;" class="text-center"><%= link_to 'show', link_path(link) %></span>
-          <span style="padding: 0 5px;" class="text-center"><%= link_to 'new', new_link_path(link) %></span>
           <span style="padding: 0 5px;" class="text-center"><%= link_to 'edit', edit_link_path(link) %></span>
           <span style="padding: 0 5px;" class="text-center"><%= link_to 'delete', link_path(link), method: :delete %></span>
         </td>
