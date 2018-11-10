@@ -1,0 +1,87 @@
+<%= form_with model: contact, local: true, role: 'form', class: 'form-horizontal' do |f| %>
+
+  <%= render 'application/show_form_errors', f: f %>
+
+  <div class="row">
+    <div class="col-xs-12 table">
+
+      <div class="form-group <%= 'has-error' if contact.errors['name'].present? %>">
+        <%= f.label :name, class: 'col-sm-2 control-label' do %>
+          <%= t(:name) %> <span class="text-danger">*</span>
+        <% end %>
+        <div class="col-sm-10">
+          <%= f.text_field :name, class: 'form-control', placeholder: 'name' %>
+          <% if contact.errors['name'].present? %>
+            <span class="help-block text-danger">
+              <small><%= contact.errors['name'].first %></small>
+            </span>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="form-group <%= 'has-error' if contact.errors['address'].present? %>">
+        <%= f.label :address, class: 'col-sm-2 control-label' do %>
+          <%= t(:address) %> <span class="text-danger">*</span>
+        <% end %>
+        <div class="col-sm-10">
+          <%= f.text_field :address, class: 'form-control', placeholder: 'address' %>
+          <% if contact.errors['address'].present? %>
+            <span class="help-block text-danger">
+              <small><%= contact.errors['address'].first %></small>
+            </span>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="form-group <%= 'has-error' if contact.errors['email'].present? %>">
+        <%= f.label :email, class: 'col-sm-2 control-label' do %>
+          <%= t(:email) %> <span class="text-danger">*</span>
+        <% end %>
+        <div class="col-sm-10">
+          <%= f.text_field :email, class: 'form-control', placeholder: 'email' %>
+          <% if contact.errors['email'].present? %>
+            <span class="help-block text-danger">
+              <small><%= contact.errors['email'].first %></small>
+            </span>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="form-group <%= 'has-error' if contact.errors['phone_number'].present? %>">
+        <%= f.label :phone_number, class: 'col-sm-2 control-label' do %>
+          <%= t(:phone_number) %> <span class="text-danger">*</span>
+        <% end %>
+        <div class="col-sm-10">
+          <%= f.text_field :phone_number, class: 'form-control', placeholder: 'phone_number' %>
+          <% if contact.errors['phone_number'].present? %>
+            <span class="help-block text-danger">
+              <small><%= contact.errors['phone_number'].first %></small>
+            </span>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="form-group <%= 'has-error' if contact.errors['schedule'].present? %>">
+        <%= f.label :schedule, class: 'col-sm-2 control-label' do %>
+          <%= t(:schedule) %> <span class="text-danger">*</span>
+        <% end %>
+        <div class="col-sm-10">
+          <%= f.text_field :schedule, class: 'form-control', placeholder: 'schedule' %>
+          <% if contact.errors['schedule'].present? %>
+            <span class="help-block text-danger">
+              <small><%= contact.errors['schedule'].first %></small>
+            </span>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-offset-2 col-sm-10 m-t-15">
+      <%= f.submit 'save', class: 'btn btn-white btn-sm waves-effect' %>
+      <%= link_to t(:cancel), contacts_path, class: "btn btn-white btn-sm waves-effect m-l-5" %>
+    </div>
+  </div>
+<% end %>
