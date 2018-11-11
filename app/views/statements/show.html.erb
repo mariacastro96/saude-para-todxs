@@ -1,0 +1,25 @@
+<table style="width: 100vw">
+  <thead>
+    <tr>
+      <th style="border: 1px solid black; padding: 10px 20px;" class="text-center">code</th>
+      <th style="border: 1px solid black; padding: 10px 20px;" class="text-center">title</th>
+      <th style="border: 1px solid black; padding: 10px 20px;" class="text-center">text</th>
+      <th style="border: 1px solid black; padding: 10px 20px;" class="text-center">language</th>
+      <th style="border: 1px solid black; padding: 10px 20px;" class="text-center">action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border: 1px solid black; padding: 10px 20px;" class="text-center"><%= @statement.code %></td>
+      <td style="border: 1px solid black; padding: 10px 20px;" class="text-center"><%= @statement.title %></td>
+      <td style="border: 1px solid black; padding: 10px 20px;" class="text-center"><%= @statement.text %></td>
+      <td style="border: 1px solid black; padding: 10px 20px;" class="text-center"><%= @statement.language.code %></td>
+      <td style="border: 1px solid black; padding: 10px 20px;" class="text-center">
+        <span style="padding: 0 5px;" class="text-center"><%= link_to 'back', statements_path %></span>
+        <span style="padding: 0 5px;" class="text-center"><%= link_to 'new', new_statement_path(@statement) %></span>
+        <span style="padding: 0 5px;" class="text-center"><%= link_to 'edit', edit_statement_path(@statement) %></span>
+        <span style="padding: 0 5px;" class="text-center"><%= link_to 'delete', statement_path(@statement), method: :delete %></span>
+      </td>
+    </tr>
+  </tbody>
+</table>

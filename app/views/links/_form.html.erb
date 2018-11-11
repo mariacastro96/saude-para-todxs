@@ -1,0 +1,23 @@
+<div class="main-form-container">
+  <div class="form-container">
+    <%= simple_form_for(link) do |f| %>
+      <% if link.errors.any? %>
+        <div class="errors-container">
+          <ul>
+            <% link.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <%= f.input :name, placeholder: 'Name', label_html: { class: 'icons pen-icon' }, label: '.' %>
+      <%= f.input :link, placeholder: 'Link', label_html: { class: 'icons pen-icon' }, label: '.' %>
+      <%= f.submit 'Add', class: 'form-button' %>
+    <% end %>
+    </div>
+    <div class="arrow-back">
+    <%= link_to links_path do %>
+      <i class="fas fa-arrow-left fa-2x" style="color: black; margin-top: 30px;"></i>
+    <% end %>
+  </div>
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_10_162318) do
+ActiveRecord::Schema.define(version: 2018_11_11_213021) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,19 @@ ActiveRecord::Schema.define(version: 2018_11_10_162318) do
     t.string "schedule"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "fields", force: :cascade do |t|
+    t.string "code"
+    t.string "title"
+    t.text "description"
+    t.integer "total_value"
+    t.bigint "study_id"
+    t.bigint "language_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["language_id"], name: "index_fields_on_language_id"
+    t.index ["study_id"], name: "index_fields_on_study_id"
   end
 
   create_table "languages", force: :cascade do |t|
@@ -62,8 +75,7 @@ ActiveRecord::Schema.define(version: 2018_11_10_162318) do
   create_table "studies", force: :cascade do |t|
     t.string "code"
     t.string "title"
-    t.string "subtitle"
-    t.integer "total_value"
+    t.text "description"
     t.bigint "language_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -86,19 +98,21 @@ ActiveRecord::Schema.define(version: 2018_11_10_162318) do
   create_table "variables", force: :cascade do |t|
     t.string "code"
     t.string "name"
-    t.integer "value"
+    t.float "value"
     t.float "percentage"
-    t.bigint "study_id"
+    t.bigint "field_id"
     t.bigint "language_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["field_id"], name: "index_variables_on_field_id"
     t.index ["language_id"], name: "index_variables_on_language_id"
-    t.index ["study_id"], name: "index_variables_on_study_id"
   end
 
+  add_foreign_key "fields", "languages"
+  add_foreign_key "fields", "studies"
   add_foreign_key "questions", "languages"
   add_foreign_key "statements", "languages"
   add_foreign_key "studies", "languages"
+  add_foreign_key "variables", "fields"
   add_foreign_key "variables", "languages"
-  add_foreign_key "variables", "studies"
 end

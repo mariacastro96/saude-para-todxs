@@ -1,0 +1,25 @@
+<div class="main-form-container">
+  <div class="form-container">
+    <%= simple_form_for(question) do |f| %>
+      <% if question.errors.any? %>
+        <div class="errors-container">
+          <ul>
+            <% question.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <%= f.input :code, placeholder: 'Question', label_html: { class: 'icons pen-icon' }, label: '.' %>
+      <%= f.input :question, as: :text, placeholder: 'Question', label_html: { class: 'icons pen-icon' }, label: '.' %>
+      <%= f.input :answer, as: :text, placeholder: 'Answer', label_html: { class: 'icons pen-icon' }, label: '.', :input_html => {:rows => 1}%>
+      <%= f.input :language_id, collection: languages, placeholder: 'Category (ex: dad joke)', label_html: { class: 'icons' }, label: '.' %>
+      <%= f.submit 'Add', class: 'form-button' %>
+    <% end %>
+    </div>
+    <div class="arrow-back">
+    <%= link_to questions_path do %>
+      <i class="fas fa-arrow-left fa-2x" style="color: black; margin-top: 30px;"></i>
+    <% end %>
+  </div>
+</div>
