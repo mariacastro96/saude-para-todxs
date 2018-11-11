@@ -11,4 +11,10 @@ Rails.application.routes.draw do
 
   resources :statements
 
+  resources :studies
+
+  resources :fields
+
+  resources :variables
+
 end
