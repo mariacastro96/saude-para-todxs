@@ -10,8 +10,8 @@ class Contact < ApplicationRecord
   # Constants
 
   # Validations
-  validates :name, :address, :email, :phone_number, :schedule, presence: true
-  
+  validates :name, :address, :email, :phone_number, presence: true
+
   # Scopes
 
   # Callbacks
