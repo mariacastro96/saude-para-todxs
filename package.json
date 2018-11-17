@@ -4,7 +4,10 @@
   "dependencies": {
     "@rails/webpacker": "3.5",
     "bootstrap": ">=4.1.2",
-    "jquery": "^3.3.1"
+    "caniuse-lite": "^1.0.30000697",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.3",
+    "webpack": "^3.0.0"
   },
   "devDependencies": {
     "webpack-dev-server": "2.11.2"
