@@ -53,11 +53,11 @@ links = [
 ]
 
 
-  puts "Cleaning up database"
-  User.delete_all
-  Language.delete_all
-  Contact.delete_all
-  Link.delete_all
+  # puts "Cleaning up database"
+  # User.delete_all
+  # Language.delete_all
+  # Contact.delete_all
+  # Link.delete_all
 
   puts "Creating Users"
   users.each do |user|
