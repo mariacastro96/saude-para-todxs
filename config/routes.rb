@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  get '/solim', to: 'pages#solim'
+
   namespace :admin do
       resources :users
       resources :contacts
