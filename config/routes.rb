@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   get '/solim', to: 'pages#solim'
+  get '/project', to: 'pages#project'
+  get '/question', to: 'pages#question'
 
   namespace :admin do
       resources :users

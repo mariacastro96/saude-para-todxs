@@ -1,335 +1,38 @@
-<div class="row">
-  <div class="col-sm-12 col-lg-4">
-    <canvas id="genero" style="width: 80% !important; height: 80% !important;"></canvas>
-  </div>
-  <div class="col-sm-12 col-lg-4">
-    <canvas id="residentes" style="width: 80% !important; height: 80% !important;"></canvas>
-  </div>
-  <div class="col-sm-12 col-lg-4">
-    <canvas id="medico" style="width: 80% !important; height: 80% !important;"></canvas>
-  </div>
-  <div class="col-sm-12 col-lg-4">
-    <canvas id="snsPrivado" style="width: 80% !important; height: 80% !important;"></canvas>
-  </div>
-  <div class="col-sm-12 col-lg-4">
-    <canvas id="nSNS" style="width: 80% !important; height: 80% !important;"></canvas>
-  </div>
-  <div class="col-sm-12 col-lg-4">
-    <canvas id="Dific" style="width: 80% !important; height: 80% !important;"></canvas>
-  </div>
+<div id="SolimTabs" class="container" style="width: 70vw;">
+  <ul class="nav nav-tabs">
+  	<li class="active">
+      <a href="#1" data-toggle="tab">Quem Somos?</a>
+  	</li>
+  	<li>
+      <a href="#2" data-toggle="tab">O que fazemos</a>
+  	</li>
+  </ul>
+
+	<div class="tab-content ">
+	  <div class="tab-pane active" id="1">
+      <p>Solidariedade Imigrante é uma associação pela defesa dos direitos dos imigrantes em Portugal, de âmbito nacional e sem fins lucrativos, criada em 2001.Queremos dar a palavra aos imigrantes, uma palavra autônoma e independente, para que sejamos os verdadeiros protagonistas na defesa dos nossos interesses.</p>
+      <p>Queremos que todos possam exercer os seus direitos, independentemente do pais de origem, da religião, da etnia e do sexo, através da luta por direitos iguais.</p>
+      <p>Pertencemos à varias redes de associações nacionais e internacionais, nomeadamente a Plataforma de Associações de Imigrantes, a Rede de Combate a Exclusão Social e Pobreza, a Plataforma artigo 65 – Habitação para tod@s, a Rede No-Vox; somos ainda um dos promotores do Forum Social Português.</p>
+      <p>Lutamos diariamente pela autonomia financeira. Aqueles que ajudamos também ajudam a associação, associando-se e pagando as suas quotas, numa atitude de responsabilização e na criação de um sentimento de pertence.</p>
+		</div>
+		<div class="tab-pane" id="2">
+      <p>Damos informações sobre direitos e deveres dos cidadãos estrangeiros e apoiamos nas seguintes situações:</p>
+        <ul>
+          <li>A regularização (autorização de residência e de permanência, visto de estudo…)</li>
+          <li>O reagrupamento familiar</li>
+          <li>O asilo politico.</li>
+          <li>O direito à educação, à saude, à habitação, à segurança social e ao trabalho.</li>
+        </ul>
+      <p>Apoiamos e acompanhamos os trabalhadores na resolução dos conflictos laborais.</p>
+      <p>Prestamos apoio em situações relacionadas com prisões, tribunais e zona internacional do aeroporto de Lisboa.</p>
+      <p>Temos uma parceria com o Instituto de Emprego e Formação Profissional (UNIVA) para orientação e acompanhamento na procura de emprego e na formação profissional.</p>
+      <p>Organizamos cursos de português, inglês, russo, arabe, crioulo e informatica.</p>
+      <p>Organizamos Workshops de dança, percussão, video e outras areas artisticas.</p>
+      <p>Organizamos encontros interculturais e concertos, no âmbito da defesa dos direitos humanos, com o objectivo de permitir o conhecimento de culturas diferentes e um debate de ideias e experiências.</p>
+      <p>Organizamos e participamos em debates e exposições sobre a luta dos imigrantes em Portugal, em colaboração com universidades, escolas e outros organismos.</p>
+      <p>Propomos-nos em organizar muitas outras actividades, nos bairros, nos locais de trabalho e na rua, contando com a tua participação.</p>
+      <p>Temos um bar aberto e organizamos jantares à volta de gastronomia do mundo, debates, filmes e musica de vários países, para promover a confraternização e a vivência intercultural.</p>
+      <p>Par alem das actividades que desenvolvemos com todas as comunidades imigrantes, a nossa associação, pela dinâmica exercida, criou outras áreas de trabalho, nomeadamente o Jornal da SOLIM, o grupo Juventude e mobilidade, o grupo Direito à Habitação, o grupo Mulheres Imigrantes.</p>
+		</div>
+	</div>
 </div>
-<script>
-var ctx = document.getElementById("genero").getContext('2d');
-var genero = new Chart(ctx,{
-  type:'pie',
-  data: {
-    labels:['Homem', 'Mulher', 'N/A'],
-    datasets:[{
-      label:'Population',
-      data:[
-        217,
-        80,
-        3
-      ],
-      // backgroundColor:'green'
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)'
-      ],
-      borderWidth:1,
-      borderColor:'#777',
-      hoverBorderWidth:3,
-      hoverBorderColor: 'black'
-    }]
-  },
-  options: {
-    title:{
-      display:true,
-      text:'Genero',
-      fontSize: 25
-    },
-    legend: {
-      display: true,
-      position: 'right',
-      labels:{
-        fontColor:'#000'
-      }
-    },
-    layout:{
-      padding:{
-        left:50,
-        right:0,
-        bottom:0,
-        top:0
-      }
-    },
-    tooltips:{
-      enabled: false
-    }
-  }
-});
-</script>
-
-<script>
-var ctx = document.getElementById("residentes").getContext('2d');
-var residentes = new Chart(ctx,{
-  type:'pie',
-  data: {
-    labels:['Sim', 'Não', 'N/A'],
-    datasets:[{
-      label:'Autorização de residência',
-      data:[
-        28,
-        271,
-        1
-      ],
-      // backgroundColor:'green'
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)'
-      ],
-      borderWidth:1,
-      borderColor:'#777',
-      hoverBorderWidth:3,
-      hoverBorderColor: 'black'
-    }]
-  },
-  options: {
-    title:{
-      display:true,
-      text:'Autorização de residência',
-      fontSize: 25
-    },
-    legend: {
-      display: true,
-      position: 'right',
-      labels:{
-        fontColor:'#000'
-      }
-    },
-    layout:{
-      padding:{
-        left:50,
-        right:0,
-        bottom:0,
-        top:0
-      }
-    },
-    tooltips:{
-      enabled: false
-    }
-  }
-});
-</script>
-
-<script>
-var ctx = document.getElementById("medico").getContext('2d');
-var medico = new Chart(ctx,{
-  type:'pie',
-  data: {
-    labels:['Sim', 'Não'],
-    datasets:[{
-      label:'Recorreu ao médico',
-      data:[
-        233,
-        67
-      ],
-      // backgroundColor:'green'
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-      ],
-      borderWidth:1,
-      borderColor:'#777',
-      hoverBorderWidth:3,
-      hoverBorderColor: 'black'
-    }]
-  },
-  options: {
-    title:{
-      display:true,
-      text:'Recorreu ao médico',
-      fontSize: 25
-    },
-    legend: {
-      display: true,
-      position: 'right',
-      labels:{
-        fontColor:'#000'
-      }
-    },
-    layout:{
-      padding:{
-        left:50,
-        right:0,
-        bottom:0,
-        top:0
-      }
-    },
-    tooltips:{
-      enabled: false
-    }
-  }
-});
-</script>
-
-<script>
-var ctx = document.getElementById("snsPrivado").getContext('2d');
-var snsPrivado = new Chart(ctx,{
-  type:'pie',
-  data: {
-    labels:['Centro de Saúde', 'Hospital', 'Ambos', 'N/A'],
-    datasets:[{
-      label:'Centro de Saúde ou Hospital',
-      data:[
-        123,
-        26,
-        65,
-        6
-      ],
-      // backgroundColor:'green'
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(55, 99, 32, 0.2)',
-        'rgba(25, 9, 1, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-      ],
-      borderWidth:1,
-      borderColor:'#777',
-      hoverBorderWidth:3,
-      hoverBorderColor: 'black'
-    }]
-  },
-  options: {
-    title:{
-      display:true,
-      text:'Centro de Saúde ou Hospital',
-      fontSize: 25
-    },
-    legend: {
-      display: true,
-      position: 'right',
-      labels:{
-        fontColor:'#000'
-      }
-    },
-    layout:{
-      padding:{
-        left:50,
-        right:0,
-        bottom:0,
-        top:0
-      }
-    },
-    tooltips:{
-      enabled: false
-    }
-  }
-});
-</script>
-
-<script>
-var ctx = document.getElementById("nSNS").getContext('2d');
-var nSNS = new Chart(ctx,{
-  type:'pie',
-  data: {
-    labels:['Sim', 'Não', 'N/A'],
-    datasets:[{
-      label:'Numero de SNS',
-      data:[
-        84,
-        147,
-        2      ],
-      // backgroundColor:'green'
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(2, 39, 199, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-      ],
-      borderWidth:1,
-      borderColor:'#777',
-      hoverBorderWidth:3,
-      hoverBorderColor: 'black'
-    }]
-  },
-  options: {
-    title:{
-      display:true,
-      text:'Numero de SNS',
-      fontSize: 25
-    },
-    legend: {
-      display: true,
-      position: 'right',
-      labels:{
-        fontColor:'#000'
-      }
-    },
-    layout:{
-      padding:{
-        left:50,
-        right:0,
-        bottom:0,
-        top:0
-      }
-    },
-    tooltips:{
-      enabled: false
-    }
-  }
-});
-</script>
-
-<script>
-var ctx = document.getElementById("Dific").getContext('2d');
-var Dific = new Chart(ctx,{
-  type:'pie',
-  data: {
-    labels:['Sim', 'Não', 'N/A'],
-    datasets:[{
-      label:'Dificuldade',
-      data:[
-        93,
-        131,
-        9      ],
-      // backgroundColor:'green'
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(2, 39, 199, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-      ],
-      borderWidth:1,
-      borderColor:'#777',
-      hoverBorderWidth:3,
-      hoverBorderColor: 'black'
-    }]
-  },
-  options: {
-    title:{
-      display:true,
-      text:'Dificuldade',
-      fontSize: 25
-    },
-    legend: {
-      display: true,
-      position: 'right',
-      labels:{
-        fontColor:'#000'
-      }
-    },
-    layout:{
-      padding:{
-        left:50,
-        right:0,
-        bottom:0,
-        top:0
-      }
-    },
-    tooltips:{
-      enabled: false
-    }
-  }
-});
-</script>
